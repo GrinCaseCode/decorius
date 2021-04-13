@@ -531,9 +531,13 @@
         margin: 0 -15px;
     }
     .slider-catalog .item-card {
-         margin-left: 15px;
-         margin-right: 15px;
+         margin-left: auto;
+         margin-right: auto;
     }
+    .slider-nav-products__item {
+    max-width: 73px;
+    margin: 0 auto;
+}
 }
 
 /* Custom, iPhone Retina */
