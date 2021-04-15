@@ -222,6 +222,23 @@ new Promise((resolve, reject) => {
  	]
  });
 
+  $('.blogs .row_blogs').slick({
+ 	dots: false,
+ 	arrows: false,
+ 	slidesToShow:1,
+ 	variableWidth: true,
+ 	infinite: true,
+ 	arrows: false,
+ 	slidesToScroll: 1,
+ 	mobileFirst: true,
+ 	responsive: [
+ 	{
+ 		breakpoint: 480,
+ 		settings: 'unslick'
+ 	}
+ 	]
+ });
+
  $('.brands-items').slick({
  	arrows: true,
  	dots: false,
