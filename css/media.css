@@ -160,7 +160,7 @@
     }
     .menu-mobile {
         padding: 0 20px;
-        padding-bottom: 30px;
+        padding-bottom: 90px;
         position: absolute;
         top: 100%;
         left: 0;
@@ -172,6 +172,7 @@
     }
     .menu-mobile .header-top__item ul a {
         display: block;
+        margin-right: 0;
         padding: 10px 0;
     border-bottom: 1px solid rgba(37, 37, 37, 0.2);
     }
