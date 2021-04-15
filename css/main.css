@@ -2197,6 +2197,7 @@ position: relative;
   font-size: 16px;
 line-height: 20px;
 padding: 10px 20px;
+font-weight: 500;
 background-color: #EEBBA5;
 border-radius: 6px;
 color: #fff;
@@ -2554,4 +2555,7 @@ line-height: 45px;
 }
 .card {
   padding-bottom: 30px;
+}
+.title-small_reviews {
+  padding-top: 15px;
 }
