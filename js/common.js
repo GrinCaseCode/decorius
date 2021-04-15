@@ -30,7 +30,7 @@ $(".billbord").waypoint(function(direction) {
 }, {offset: '-100%'}); 
 /*высота блока по экрану*/
 	function heightDetect() {
-		$('.menu-mobile').css("height", $(window).height() -$(".header").height());
+		$('.menu-mobile').css("height", $(window).height() -$(".header").height() + 60);
 	};
 	heightDetect();
 	$(window).resize(function() {
