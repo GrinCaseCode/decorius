@@ -16,9 +16,7 @@ $(".change-color li").click(function(e) {
 			}
 		});
 
-		$(".icon-phones").click(function() {
-			$(this).siblings(".header-bottom__dropdown").slideToggle(200);
-		});
+	
 
 
 		$(".billbord").waypoint(function(direction) {
