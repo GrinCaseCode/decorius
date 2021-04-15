@@ -244,10 +244,8 @@ p {
   font-size: 13px;
   line-height: 16px;
   color: #252525;
+  transition: all 0.3s;
 }
-
-
-
 .header-bottom__img span {
     top: 4px;
     right: -3px;
