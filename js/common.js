@@ -1,5 +1,10 @@
 $(".input-phone").mask("+7 (999) 999-99-99");
 
+$(".change-color li").click(function(e) {
+	e.preventDefault();
+		$(this).addClass("active");
+		$(this).siblings("li").removeClass("active");
+	});
 
 		//кнопка sandwich
 		$(".btn_nav").click(function() {
@@ -16,6 +21,13 @@ $(".input-phone").mask("+7 (999) 999-99-99");
 		});
 
 
+$(".billbord").waypoint(function(direction) {
+  if (direction === "down") {
+    $(".scoll-top").addClass("active");
+  } else if (direction === "up") {
+    $(".scoll-top").removeClass("active");
+  };
+}, {offset: '-100%'}); 
 /*высота блока по экрану*/
 	function heightDetect() {
 		$('.menu-mobile').css("height", $(window).height() -$(".header").height());
@@ -48,11 +60,11 @@ $(".input-phone").mask("+7 (999) 999-99-99");
 		e.preventDefault();
 		$('.tabs li').removeClass('active');
 		$(this).parent().addClass('active');
-		$('.tab-pane').hide();
+		$('.tab-pane').removeClass("active");
 
 		var selectTab = $(this).attr("href");
 
-		$(selectTab).fadeIn();
+		$(selectTab).addClass("active");
 	});
 
 
@@ -90,21 +102,82 @@ $('.slider-billboard').each(function(){
 			updateSliderCounter(slick, currentSlide);
 		});
 
+		  $('.slider-billboard').on('init', function(e, slick) {
+        var $firstAnimatingElements = $('.slider-billboard__item:first-child').find('[data-animation]');
+        doAnimations($firstAnimatingElements);    
+    });
+    $('.slider-billboard').on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+              var $animatingElements = $('.slider-billboard__item[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+              doAnimations($animatingElements);    
+    });
+
 		$slider.slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			dots: false,
+			fade: true,
 			arrow: true,
 			prevArrow: '<div class="slick-prev slick-arrow"><i class="far fa-angle-left"></i>назад<div/>',
 			nextArrow: '<div class="slick-next slick-arrow">Вперёд<i class="far fa-angle-right"></i><div/>',
 			appendArrows: $('.arrows-wrap'),
 			infinite: false,
 		});
-	} 
 
+		function doAnimations(elements) {
+        var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        elements.each(function() {
+            var $this = $(this);
+            var $animationDelay = $this.data('delay');
+            var $animationType = 'animated ' + $this.data('animation');
+            $this.css({
+                'animation-delay': $animationDelay,
+                '-webkit-animation-delay': $animationDelay
+            });
+            $this.addClass($animationType).one(animationEndEvents, function() {
+                $this.removeClass($animationType);
+            });
+        });
+    }
+	}
 
 });
 
+const animateCSS = (element, animation, delay = '', prefix = 'animate__') =>
+// We create a Promise and return it
+new Promise((resolve, reject) => {
+  const delayTime = `${delay}`;
+  const animationName = `${prefix}${animation}`;
+  const node = document.querySelector(element);
+  if (delay){
+    node.classList.add(`${prefix}animated`, animationName, `${prefix}delay-${delayTime}`);
+  }else{
+    node.classList.add(`${prefix}animated`, animationName);
+  }
+  // When the animation ends, we clean the classes and resolve the Promise
+  function handleAnimationEnd(event) {
+    event.stopPropagation();
+    node.classList.remove(`${prefix}animated`, animationName, `hide`, `${prefix}delay-${delayTime}`);
+    resolve('Animation ended');
+  }
+  node.addEventListener('animationend', handleAnimationEnd, {once: true});
+});
+
+
+ // Slick slider
+  $('.slider-billboard').on('init', function(event, slick){
+      let bg = $('.slide-1').attr('data-bg');
+      $('.slide-1').parents('.promo').attr('data-bg', bg);
+      animateCSS('.big-title', 'fadeInDown');
+      animateCSS('.slider-billboard__descr', 'fadeInUp');
+      animateCSS('.slider-billboard__btn', 'fadeIn', '1s');
+  });
+
+$('.slider-billboard').on('afterChange', function(event, slick, currentSlide){
+    let slideClass = ".slide-"+(currentSlide + 1);
+    animateCSS(slideClass+' .big-title', 'fadeInDown');
+    animateCSS(slideClass+' .slider-billboard__descr', 'fadeInUp');
+    animateCSS(slideClass+' .slider-billboard__btn', 'fadeIn', '1s');
+  });
 
 $('.slider-catalog').slick({
 	arrows: true,
@@ -125,6 +198,28 @@ $('.slider-catalog').slick({
 		breakpoint: 480,
 		settings: {
 			slidesToShow:1,
+			variableWidth: true,
+			arrows: false,
+		}
+	}
+	]
+});
+
+$('.brands-items').slick({
+	arrows: true,
+	dots: false,
+	infinite: true,
+	slidesToShow:6,
+	prevArrow: '<div class="slick-prev slick-arrow"><div/>',
+	nextArrow: '<div class="slick-next slick-arrow"><div/>',
+	slidesToScroll: 1,
+	responsive: [
+	{
+		breakpoint: 480,
+		settings: {
+			slidesToShow:1,
+			variableWidth: true,
+			arrows: false,
 		}
 	}
 	]
@@ -148,7 +243,9 @@ $('.slider-products').slick({
 	{
 		breakpoint: 480,
 		settings: {
-			slidesToShow:2,
+			slidesToShow:1,
+			variableWidth: true,
+			arrows: false,
 			dots: false,
 		}
 	}
@@ -183,6 +280,7 @@ $('.slider-for-products').slick({
 	infinite: true,
 	focusOnSelect: true,
 	fade: true,
+	swipe: false,
 	slidesToShow:1,
 	asNavFor: '.slider-nav-products',
 	prevArrow: '<div class="slick-prev slick-arrow"><div/>',
@@ -191,6 +289,73 @@ $('.slider-for-products').slick({
 	
 });
 
+$('.slider-nav').slick({
+	arrows: true,
+	dots: false,
+	infinite: true,
+	focusOnSelect: true,
+	vertical: true,
+	asNavFor: '.slider-for',
+	verticalSwiping: true,
+	slidesToShow:4,
+	prevArrow: '<div class="slick-prev slick-arrow"><div/>',
+	nextArrow: '<div class="slick-next slick-arrow"><div/>',
+	slidesToScroll: 1,
+	responsive: [{
+		breakpoint: 992,
+		settings: {
+			vertical: false,
+			verticalSwiping: false,
+		}
+	}]
+});
+
+$('.slider-for').slick({
+	arrows: false,
+	dots: false,
+	infinite: true,
+	focusOnSelect: true,
+	fade: true,
+	slidesToShow:1,
+	asNavFor: '.slider-nav',
+	prevArrow: '<div class="slick-prev slick-arrow"><div/>',
+	nextArrow: '<div class="slick-next slick-arrow"><div/>',
+	slidesToScroll: 1,
+	
+});
+
+
+
+ $(document).on('mouseenter', '.slider-card-image .slick-dots li', function() {
+        if ($(this).hasClass('slick-active')){}else{
+            $(this).siblings().removeClass('slick-active');
+            $(this).addClass('slick-active');
+            var slider = $(this).parents('.slider-card-image'),
+                num = $(this).index();
+            setTimeout(function() {
+                slider.slick('slickGoTo', num, true).slick('setPosition');
+            }, 10);
+        }
+    });
+    $('.slider-card-image').on('init reInit', function(event, slick){
+        if(slick.slideCount>1){
+            let dotWidth = 100 / slick.slideCount;
+            $(event.currentTarget).find('.slick-dots li').css({"width": dotWidth+"%"});
+        }else {
+            $(event.currentTarget).find('.slick-dots').hide();
+        }
+    });
+
+    $('.slider-card-image').slick({
+	arrows: false,
+	dots: true,
+	infinite: true,
+	slidesToShow:1,
+	prevArrow: '<div class="slick-prev slick-arrow"><div/>',
+	nextArrow: '<div class="slick-next slick-arrow"><div/>',
+	slidesToScroll: 1,
+
+});
 
 $(".footer__title").click(function() {
 		$(this).toggleClass("active");
