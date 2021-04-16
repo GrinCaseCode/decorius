@@ -4,7 +4,7 @@
 }
 @media only screen and (max-width : 1200px) {
     .header-top__item ul li a {
-        margin-right: 13px;
+        margin-right: 13px; 
     }
     .header-bottom__search input {
         width: 240px;
@@ -47,7 +47,32 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-
+    .card__center .change-color {
+        margin-bottom: 15px;
+    }
+    .item-feature span {
+    width: 110px;
+}
+.btns-card {
+    flex-wrap: wrap;
+}
+.btns-card .btn-page {
+    margin-bottom: 15px;
+    width: 100%;
+}
+.slider-nav__item {
+    width: 100%;
+    height: 58px;
+    }
+    .btn-rotate {
+        max-width: 100%;
+    }
+    .card-about__item {
+        font-size: 14px;
+    }
+    .card-about__logo {
+    margin-right: 14px;
+}
 }
 
 @media only screen and (max-width: 992px) {
@@ -267,6 +292,68 @@
 .col_for {
     order: -1;
 }
+.slider-nav__item {
+    width: 65px;
+    height: 85px;
+    margin-bottom: 0;
+    margin: 0 auto;
+    }
+    .slider-nav {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .card__center .change-color {
+        margin-bottom: 0;
+    }
+    .card__right {
+        padding-top: 20px;
+    }
+    .item-feature span {
+        width: 189px;
+    }
+    .btns-card .btn-page {
+        width: initial;
+        margin: 0;
+    }
+    .card-about {
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .card-about > div {
+        width: 25%;
+        margin-bottom: 20px;
+    }
+    .card-about__item {
+        align-items: flex-start;
+    }
+    .col_features {
+        padding-top: 20px;
+    }
+    .item-review__name {
+    font-size: 16px;
+}
+.breadcumbs {
+    padding-top: 20px;
+}
+.recomendation {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+.section-title_page {
+    font-size: 33px;
+    line-height: 41px;
+}   
+.recomendation .section-title {
+    max-width: 580px;
+    margin-bottom: 50px;
+}
+.recomendation_products {
+    padding-bottom: 85px;
+}
+.recomendation_products .section-title {
+    margin-bottom: 0;
+}
 }
 
 /* Small Devices, Tablets */
@@ -463,7 +550,15 @@
 .slider-for__item {
     height: 300px;
 }
-
+.card-about > div {
+    width: 100%;
+}
+.card-about {
+    margin-bottom: 0;
+}
+.item-review__name {
+    font-size: 18px;
+}
 
 }
 
