@@ -382,6 +382,9 @@
     .head-filter.active .clear-filter  {
       display: inline-flex;
     }
+    .sidebar-filter__content {
+        padding-bottom: 20px;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -657,6 +660,7 @@
     .card__right {
         padding-top: 0;
     }
+
 }
 
 /* Extra Small Devices, Phones */
@@ -881,6 +885,10 @@
     width: 280px;
     padding: 0;
     margin-right: 15px;
+}
+.row_products .item-card {
+    margin-left: auto;
+    margin-right: auto;
 }
 }
 /* Custom, iPhone Retina */
