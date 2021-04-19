@@ -11,7 +11,7 @@
 *::-moz-placeholder {
   color: #252525;
   transition: all 0.3s;
-  opacity: 0.4;
+  opacity: 0.4; 
 }
 *:-ms-input-placeholder {
   color: #252525;
