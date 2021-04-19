@@ -1,6 +1,9 @@
 
 @media only screen and (max-width : 1290px) {
-
+.item-card .btn-page {
+    font-size: 14px;
+        padding: 10px 14px;
+}
 }
 @media only screen and (max-width : 1200px) {
     .header-top__item ul li a {
@@ -88,7 +91,7 @@
        width: 100%;
        order: 2;
        margin-top: 0;
-       margin-bottom: 6px;
+       margin-bottom: 15px;
    }
    .header-bottom__items .header-bottom__text {
     display: none;
@@ -264,7 +267,7 @@
     width: 100%;
 }
 .wrapper {
-    padding-top: 137px;
+    padding-top: 146px;
 }
 .header {
     position: fixed;
@@ -354,6 +357,31 @@
 .recomendation_products .section-title {
     margin-bottom: 0;
 }
+.row_products > div {
+    margin-top: 30px;
+}
+.item-card.row .slider-card-image {
+    max-width: 185px;
+}
+.item-card.row .item-card__lowest {
+    padding: 0;
+}
+.item-card.row .btn-card {
+    margin-left: 3px;
+    width: 37px;
+    }
+    .item-card.row {
+        margin-top: 0;
+    }
+    .sidebar-filter__content {
+        display: none;
+    }
+    .head-filter .clear-filter {
+        display: none;
+    }
+    .head-filter.active .clear-filter  {
+      display: inline-flex;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -542,7 +570,7 @@
         width: 115px;
     }
     .wrapper {
-        padding-top: 111px;
+        padding-top: 120px;
     }
     .item-card__hoverimage {
         display: none;
@@ -559,7 +587,76 @@
 .item-review__name {
     font-size: 18px;
 }
-
+.list-subcategory li {
+    margin-top: 12px;
+    margin-right: 10px;
+}
+.list-subcategory li a {
+    font-size: 14px;
+}
+.row_products > div {
+    padding: 0 5px;
+    margin-top: 10px;
+}
+.row_products {
+    margin: 0 -5px;
+}
+.views-wrap {
+    display: none;
+}
+.item-card .btns-card .btn-page {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+}
+.item-card__lowest,
+.item-card__center {
+    width: 100%;
+}
+.item-card .btns-card {
+    justify-content: space-between;
+}
+.item-card .btns-card .btn-card {
+    width: 31%;
+    height: 44px;
+    margin: 0;
+}
+.bottom-catalog__left {
+    font-size: 14px;
+    }
+    .tabs {
+        margin: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+        display: block;
+        background-color: transparent;
+    }
+    .tabs li  {
+        margin-right: 15px;
+    }
+    .tabs li a {
+        padding: 0;
+        font-family: "PTRoot";
+        font-weight: 500;
+            color: #252525;
+        height: auto;
+        text-transform: none;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+    .tabs li a span {
+        display: none;
+    }
+    .tabs li.active a {
+        color: #EEBBA5;
+    }
+    .hidden-mob {
+        display: none;
+    }
+    .card__right {
+        padding-top: 0;
+    }
 }
 
 /* Extra Small Devices, Phones */
@@ -610,13 +707,7 @@
     .offers {
         margin-top: 45px;
     }
-    .tabs li {
-        width: 50%;
-    }
-    .tabs li a {
-        padding: 0 6px;
-        justify-content: flex-start;
-    }
+
     .row_catalog > div {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -689,7 +780,7 @@
     width: 100px;
 }
 .wrapper {
-    padding-top: 103px;
+    padding-top: 112px;
 }
 .slider-catalog {
     padding-bottom: 20px;
@@ -762,6 +853,35 @@
 .card {
     padding-bottom: 15px;
 }
+.row_products > div {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.bottom-catalog {
+    margin-top: 15px;
+    flex-direction: column;
+}
+.pagination {
+    order: -1;
+}
+.bottom-catalog__left {
+    margin-top: 15px;
+}
+.tabs {
+    margin-right: -15px;
+    max-width: initial;
+}
+.row_reviews  {
+    margin-right: -15px;
+    display: block;
+}
+.row_reviews .slick-slide {
+    width: 280px;
+    padding: 0;
+    margin-right: 15px;
+}
 }
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 360px) {
@@ -802,6 +922,9 @@
 @media only screen and (min-width : 992px) {
     .menu-mobile {
         display: none !important;
+    }
+    .sidebar-filter__content {
+        display: block !important;
     }
 }
 
