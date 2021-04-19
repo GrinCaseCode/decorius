@@ -43,10 +43,17 @@ $('select').styler();
 			
 		});
 
-		$(".title-filter").click(function() {
+		  {
+    if ($(window).width() < 992) { 
+$(".title-filter").click(function() {
 			$(this).parent().toggleClass("active");
 			$(".sidebar-filter__content").slideToggle(200);
 		});
+
+
+    }
+  }
+
 
 
 		$(".unit-checkbox .link-simple").click(function(e) {
