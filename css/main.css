@@ -3005,3 +3005,48 @@ line-height: 24px;
 .text-section  {
   padding-bottom: 23px;
 }
+/*
+.header-bottom {
+  margin: 20px 0;
+}
+ .header-bottom__links {
+    padding-left: 30px;
+    background-image: url(../img/ic_call2.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+.header-bottom__dropdown {
+  left: 27px;
+}
+*/
+.modal-block {
+  display: none;
+}
+.modal-wrap {
+  padding: 45px 30px;
+  width: 1290px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  background: #FFFFFF;
+box-shadow: 0px 0px 29px rgba(0, 0, 0, 0.05);
+border-radius: 20px;
+}
+.fancybox-skin {
+  padding: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.fancybox-inner {
+  overflow: visible !important;
+}
+.fancybox-close {
+  width: 43px;
+  height: 43px;
+  background-image: url(../img/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+ right: 20px;
+ top: 20px; 
+}

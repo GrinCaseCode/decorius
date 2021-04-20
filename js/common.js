@@ -35,7 +35,7 @@ $('select').styler();
 		$(".btn-view_grid").click(function(e) {
 			e.preventDefault();
 			$(this).addClass("active");
-			$(".btn-view_list").removeClass("active");
+			$(".btn-view_list").removeClass("active"); 
 			$(".row_products > div").addClass("col-lg-4 col-6");
 			$(".row_products > div").removeClass("col-12");
 			$(".item-card").removeClass("row");
@@ -87,7 +87,7 @@ $(".title-filter").click(function() {
 	//Документация: http://fancybox.net/howto
 	//<a class="fancybox"><img src="image.jpg" /></a>
 	//<a class="fancybox" data-fancybox-group="group"><img src="image.jpg" /></a>
-	$(".fancybox").fancybox();
+
 
 
 
@@ -302,6 +302,23 @@ new Promise((resolve, reject) => {
  	]
  });
 
+    $('.list-subcategory').slick({
+ 	dots: false,
+ 	arrows: false,
+ 	slidesToShow:1,
+ 	variableWidth: true,
+ 	infinite: false,
+ 	arrows: false,
+ 	slidesToScroll: 1,
+ 	mobileFirst: true,
+ 	responsive: [
+ 	{
+ 		breakpoint: 768,
+ 		settings: 'unslick'
+ 	}
+ 	]
+ });
+
  $('.blogs .row_blogs').slick({
  	dots: false,
  	arrows: false,
@@ -481,7 +498,13 @@ new Promise((resolve, reject) => {
  	slidesToScroll: 1,
 
  });
-
+	$(".fancybox").fancybox({
+		 beforeShow : function(){
+      $('.slider-for').slick('setPosition');
+        $('.slider-nav').slick('setPosition');
+      
+    }
+	});
 
 
  $(document).on('mouseenter', '.slider-card-image .slick-dots li', function() {
