@@ -691,6 +691,9 @@
 .row_products .item-card {
     max-width: 100%;
 }
+.modal-wrap .hidden-mob {
+    display: block;
+}
 }
 
 /* Extra Small Devices, Phones */
