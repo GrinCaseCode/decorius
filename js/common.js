@@ -10,7 +10,9 @@ $(".change-color li").click(function(e) {
 	//плавный скролл
 	$(".link-simple_features").mPageScroll2id();
 
-$('select').styler();
+//$('select').styler();
+
+$('select').select2();
 
 		//кнопка sandwich
 		$(".btn_nav").click(function() {

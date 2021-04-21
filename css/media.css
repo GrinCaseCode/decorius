@@ -935,6 +935,9 @@
 .item-card__image {
     height: 260px;
 }
+.select2-container--open .select2-dropdown {
+    left: -28px;
+}
 }
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 360px) {
