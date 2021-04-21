@@ -23,7 +23,7 @@ body {
   font-family: "PTRoot";
   font-size: 14px; 
   font-weight: normal;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   color: #252525;
   margin: 0;
   position: relative;
@@ -2300,6 +2300,7 @@ input {
 .btn-rotate {
   width: 66px;
   height: 39px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

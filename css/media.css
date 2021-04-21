@@ -932,6 +932,9 @@
     .modal-wrap .slider-nav, .modal-wrap .slider-for {
     width: 270px;
 }
+.item-card__image {
+    height: 240px;
+}
 }
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 360px) {
