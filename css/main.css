@@ -2836,6 +2836,7 @@ border-radius: 4px;
 }
 select {
   opacity: 0;
+  visibility: hidden;
 }
 .jqselect {
   display: block !important;
